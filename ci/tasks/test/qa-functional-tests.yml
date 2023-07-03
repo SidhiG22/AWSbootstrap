@@ -1,0 +1,27 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: dcil-docker-release.art.tools.deloitteinnovation.us/devi/command-line-utils
+    tag: 1.10.0
+
+run:
+  user: root
+  path: common-ci/src/run_task.py
+  args:
+    - --log=qa-functional-tests.log
+    - common-ci/tasks/utils/dummy-test.sh
+
+params:
+  # Left blank because we expect the pipeline to provide these values
+  LOG_FOLDER:
+
+inputs:
+  - name: source-code
+  - name: common-ci
+  - name: input-artifacts
+
+outputs:
+  - name: output-artifacts

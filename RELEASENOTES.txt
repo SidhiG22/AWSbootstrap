@@ -1,0 +1,10 @@
+# Module upgraded to v14
+RELEASE v0.2
+
+Change pom.xml for minor and major releases change
+
+Includes tests via terratest
+
+RELEASE v0.*
+
+Alpha release

@@ -1,0 +1,27 @@
+# Basic Configuration for Mainline Branch Strategy.
+#
+# !WARNING! Do not change this file unless you know what you're doing
+#
+mode: Mainline
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+commit-message-incrementing: Enabled
+next-version: 0.0.1
+branches:
+  master:
+    regex: master
+  feature:
+    regex: features?[/-]
+    tag: useBranchName
+    source-branches: ['master', 'feature']
+    track-merge-target: true
+    increment: minor
+  bugfix:
+    regex: bugfix(es)?[/-]
+    tag: useBranchName
+    source-branches: ['master']
+    track-merge-target: true
+    increment: patch
+ignore:
+  sha: []

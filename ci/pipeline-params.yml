@@ -1,0 +1,7 @@
+# The parent pipeline configuration file from which to create the pipeline test
+pipeline-config: pipelines/ilab-library.mako
+
+opensource_report:
+   enabled: false
+sonar:
+   enabled: false
